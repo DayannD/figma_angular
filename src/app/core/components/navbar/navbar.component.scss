@@ -10,13 +10,19 @@
       width: 64px;
       height: 64px;
       padding: 1em;
+
+      .logo-img{
+        width: 64px;
+      }
   }
+  
+  
 
   .menu {
 
       position: absolute;
       top: 50%;
-      left: 0;
+      left: 25%;
       transform: translate(-50%, -50%);
 
       ul li {
