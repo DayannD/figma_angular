@@ -4,6 +4,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { UiModule } from '../ui/ui.module';
+import { MessengerModule } from '../messenger/messenger.module';
+import { TemplateModule } from '../template/template.module';
 
 
 
@@ -21,6 +23,8 @@ import { UiModule } from '../ui/ui.module';
     NavbarComponent,
     HeaderComponent,
     UiModule,
+    MessengerModule,
+    TemplateModule,
   ]
 
 })
