@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MessageComponent } from './message/message.component';
-import { DiscutionComponent } from './discution/discution.component';
+import { MessageComponent } from './components/message/message.component';
+import { DiscutionComponent } from './components/discution/discution.component';
 
 
 

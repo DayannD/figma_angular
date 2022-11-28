@@ -1,17 +1,19 @@
- <div class="sidebar">
+<div class="sidebar">
 
-    <div class="logo">
-        <img class="logo-img" src="/assets/img/logo.png" alt="Octom.">
-    </div>
+  <div class="logo">
+    <img class="logo-img" src="/assets/img/logo.png" alt="Octom.">
+  </div>
 
-    <section class="menu">
-        <ul>
-            <li routerLink="Dashboard"><img src="/assets/img/dashboard-icon.png" alt="Dashboard"></li>
-            <li routerLink="/activity/activity"><img src="/assets/img/activity-icon.png" alt="Activity"></li>
-            <li routerLink="/ebooks/ebooks"><img src="/assets/img/ebooks-icon.png" alt="Ebooks"></li>
-            <li routerLink="/settings/setting"><img src="/assets/img/settings-icon.png" alt="Settings"></li>
-            <li routerLink="/messenger/messenger"><img src="/assets/img/messenger-icon.png" alt="Messenger"></li>
-            <li routerLink="/files/files"><img src="/assets/img/files-icon.png" alt="Files"></li>
-        </ul>
-    </section>
+  <section class="menu">
+    <ul>
+      <ng-container *ngFor="let url of item">
+        <li (click)="navTo(url)"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></li>
+      </ng-container>
+      <!-- <li routerLink="activity"><img src="/assets/img/activity-icon.png" alt="Activity"></li>
+            <li routerLink="ebooks"><img src="/assets/img/ebooks-icon.png" alt="Ebooks"></li>
+            <li routerLink="settings"><img src="/assets/img/settings-icon.png" alt="Settings"></li>
+            <li routerLink="messenger"><img src="/assets/img/messenger-icon.png" alt="Messenger"></li>
+            <li routerLink="file"><img src="/assets/img/files-icon.png" alt="Files"></li> -->
+    </ul>
+  </section>
 </div>

@@ -1,24 +1,10 @@
-<header class="fixed-top">
+<header>
   <ng-content select=".tr-header"></ng-content>
 </header>
 <main>
-  <div class="shadow position-fixed"></div>
-  <aside>
-    <div class="scroller">
-      <ng-content select=".tr-nav"></ng-content>
-    </div>
-  </aside>
   <aside>
     <div>
-      <ng-content select=".tr-messenger"></ng-content>
+      <ng-content select=".tr-navbar"></ng-content>
     </div>
   </aside>
-  <div class="page">
-    <div class="contents">
-      content
-    </div>
-    <footer>
-      <ng-content select=".tr-footer"></ng-content>
-    </footer>
-  </div>
 </main>
