@@ -23,7 +23,7 @@ import { MessengerModule } from '../messenger/messenger.module';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule.forRoot([])
   ],
   exports: [
     FooterComponent,
