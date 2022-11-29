@@ -7,7 +7,12 @@
   <section class="menu">
     <ul>
       <ng-container *ngFor="let url of item">
-        <li (click)="navTo(url)"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></li>
+        <div *ngIf="page == url;else elseBlock">
+          <li class="focus" (click)="navTo(url)"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></li>
+        </div>
+        <ng-template #elseBlock>
+          <li (click)="navTo(url)"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></li>
+        </ng-template>
       </ng-container>
       <!-- <li routerLink="activity"><img src="/assets/img/activity-icon.png" alt="Activity"></li>
             <li routerLink="ebooks"><img src="/assets/img/ebooks-icon.png" alt="Ebooks"></li>
