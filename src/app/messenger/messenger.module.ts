@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MessageComponent } from './components/message/message.component';
 import { DiscutionComponent } from './components/discution/discution.component';
+import { MessengerRoutingModule } from './messenger-routing.module';
 
 
 
@@ -11,7 +12,8 @@ import { DiscutionComponent } from './components/discution/discution.component';
     DiscutionComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MessengerRoutingModule,
   ],
   exports: [
     DiscutionComponent,
