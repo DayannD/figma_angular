@@ -1,0 +1,79 @@
+.form {
+  display: flex;
+  flex: none;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+
+  gap: 16px;
+
+  .input {
+    display: flex;
+    flex-flow: column wrap;
+    width: 80%;
+    .champ {
+      width: 100%;
+      padding: 0px;
+      height: 48px;
+      margin: 2px;
+    }
+  }
+}
+
+.img {
+  display: none;
+  flex: none;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: row wrap;
+  margin: 24px;
+  .connexion {
+    margin-left: 2em;
+  }
+  .remember {
+    margin-right: 2em;
+  }
+}
+
+.btn {
+  display: flex;
+  padding: 10px 24px;
+  width: 80%;
+  margin: 10px;
+  color: white;
+  justify-content: center;
+  /* System-Blue (#007AFF) */
+  background: #007aff;
+  border-radius: 6px;
+}
+
+#google {
+  background: #333333;
+}
+
+br {
+  background: #e5e5e5;
+}
+
+.logo {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+
+  .form {
+    flex: 4;
+  }
+  .img {
+    flex: 6;
+    display: flex;
+  }
+  .container {
+    flex-flow: row nowrap;
+  }
+}
