@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   public item: String[];
-  public page !: String;
+  public page!: String;
 
   constructor(private router:Router) {
     this.item = ["dashboard","activity","ebooks","settings","messenger","files"];
