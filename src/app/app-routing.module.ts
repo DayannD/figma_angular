@@ -30,6 +30,10 @@ const routes: Routes = [
     path: 'settings',
     loadChildren: () => import('./setting/setting.module').then(m => m.SettingModule)
   },
+  {
+    path: 'sign-in',
+    loadChildren: () => import('./login/login.module').then(m => m.LoginModule)
+  },
   // {
   //   path: '**',
   //   loadChildren: () => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
