@@ -12,6 +12,7 @@ import { SettingModule } from '../setting/setting.module';
 import { ActivityModule } from '../activity/activity.module';
 import { RouterModule } from '@angular/router';
 import { MessengerModule } from '../messenger/messenger.module';
+import { LoginModule } from '../login/login.module';
 
 
 
@@ -37,6 +38,7 @@ import { MessengerModule } from '../messenger/messenger.module';
     FilesModule,
     SettingModule,
     ActivityModule,
+    LoginModule,
   ]
 
 })
