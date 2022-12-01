@@ -17,7 +17,8 @@
         <div class="input">
           <div>
             <label class="label" for="email_num">Login</label>
-            <input class="champ" type="text" id="login" name="email_num" placeholder="Email or number">
+            <app-input class="champ" type="password" label="Email or number" (emitOutput)="emailListener($event)"></app-input>
+            <!-- <input class="champ" type="text" id="login" name="email_num" placeholder="Email or number"> -->
           </div>
           <div>
             <label class="label" for="champ">Password</label>

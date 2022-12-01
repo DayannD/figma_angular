@@ -5,6 +5,7 @@ import { LoginRoutingModule } from './login-routing.module';
 import { SignInComponent } from './pages/sign-in/sign-in.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule
+    LoginRoutingModule,
+    SharedModule,
   ]
 })
 export class LoginModule { }

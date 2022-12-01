@@ -13,6 +13,7 @@ import { ActivityModule } from '../activity/activity.module';
 import { RouterModule } from '@angular/router';
 import { MessengerModule } from '../messenger/messenger.module';
 import { LoginModule } from '../login/login.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -39,6 +40,7 @@ import { LoginModule } from '../login/login.module';
     SettingModule,
     ActivityModule,
     LoginModule,
+    SharedModule,
   ]
 
 })

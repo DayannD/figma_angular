@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+  private email!: any;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  emailListener(email:any){
+    this.email=email;
   }
 
 }
