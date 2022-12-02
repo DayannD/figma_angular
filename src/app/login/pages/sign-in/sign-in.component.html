@@ -16,29 +16,39 @@
       <form action="/" class="form" method="post">
         <div class="input">
           <div>
-            <label class="label" for="email_num">Login</label>
-            <app-input class="champ" type="password" label="Email or number" (emitOutput)="emailListener($event)"></app-input>
+            <app-input cssLabel="label" css="champ" type="text" name="email" label="Email or number"
+              (emitOutput)="emailListener($event)"></app-input>
             <!-- <input class="champ" type="text" id="login" name="email_num" placeholder="Email or number"> -->
           </div>
           <div>
-            <label class="label" for="champ">Password</label>
-            <input class="champ" type="password" id="password" name="password" placeholder="Enter password">
+            <!-- <label class="label" for="champ">Password</label> -->
+            <app-input cssLabel="label" css="champ" type="password" name="password" label="Enter password"
+              (emitOutput)="emailListener($event)"></app-input>
+            <!-- <input class="champ" type="password" id="password" name="password" placeholder="Enter password"> -->
           </div>
         </div>
       </form>
 
       <div class="connexion">
+        <div class="check">
+          <app-checkbox></app-checkbox>
         <span class="remember">remember me</span>
+        </div>
         <a href="" class="forgot"><span>forgot password?</span></a>
       </div>
 
-      <button class="btn"><span class="text">Sign In</span></button>
+      <app-btn name="sign in" css="btn"></app-btn>
+
+      <!-- <button class="btn"><span class="text">Sign In</span></button> -->
 
       <hr width="100%" color="Black">
 
-      <button class="btn" id="google"><img src="/assets/img/logo-google.png" alt="logo-google">
+
+      <app-btn css="btn" name="Or signin width Google" id="google"></app-btn>
+
+      <!-- <button class="btn" id="google"><img src="/assets/img/logo-google.png" alt="logo-google">
         <span class="text"> Or signin with Google</span>
-      </button>
+      </button> -->
 
       <span>Don't have an account ? <a class="signup" href="">Sign up now</a></span>
 
@@ -46,7 +56,6 @@
         <div><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
         <div class="nom-entreprise">UI UNICORE</div>
       </div>
-
       <div class="signature">
         <a class="insta" href="">@uiunicom</a>
         <span class="dateCrea">Perfect Login 2021</span>

@@ -1,3 +1,9 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-flow: column wrap;
+}
+
 .form {
   display: flex;
   flex: none;
@@ -5,8 +11,6 @@
   align-items: center;
   width: 100%;
   gap: 16px;
-  border: 2px solid blue($color: #000000);
-
   .input {
     display: flex;
     flex-flow: column wrap;
@@ -23,7 +27,6 @@
 .img {
   display: none;
   flex: none;
-  border: 2px solid yellow;
   .img-login {
     width: 100%;
   }
@@ -34,20 +37,34 @@
   flex-direction: row wrap;
   margin: 12px 0 12px 0;
   width: 100%;
-  border: 2px solid red;
   justify-content: space-between;
   .connexion {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     margin-left: 2em;
+    gap: 16px;
   }
   .remember {
     margin-right: 2em;
   }
+
+  .check{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
 }
 
-
-.titre{
-  display:flex;
-  width:100%;
+.titre {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  display: flex;
+  width: 100%;
   justify-content: flex-start;
 }
 .btn {
@@ -60,24 +77,20 @@
   /* System-Blue (#007AFF) */
   background: #007aff;
   border-radius: 6px;
-  border: 2px solid green;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width:80%;
+  width: 80%;
   .right-block {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5%;
-    border: 2px solid purple;
+    height: 70%;
   }
-}
-#google {
-  background: #333333;
 }
 
 br {
@@ -87,15 +100,15 @@ br {
 .logo {
   display: flex;
   flex-flow: row nowrap;
-  margin: 62px ;
-  .nom-entreprise{
-    display:flex;
+  margin: 62px;
+  .nom-entreprise {
+    display: flex;
     align-items: center;
-    padding-left:2px;
+    padding-left: 2px;
   }
 }
 
-.signup{
+.signup {
   text-decoration: none;
 }
 
@@ -103,44 +116,49 @@ br {
   display: none;
 }
 
-.label{
+.label {
   display: none;
 }
 
-.signature{
-  display:flex;
+.signature {
+  display: flex;
+  justify-items: flex-end;
   width: 100%;
-  justify-content:space-between;
-  margin-top: 20px;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+.forgot{
+  display: flex;
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
 
   .login-form {
-    flex: 4;
-
+    flex: 3;
   }
+
   .img {
     display: flex;
-    flex: 6;
+    flex: 7;
     background-image: url("/assets/img/img-login.png");
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100vh;
+    background-position: center center;
+    background-size: cover;
+    align-self: stretch;
     // object-fit: cover;
   }
+
 
   .logo-desktop {
     display: flex;
     width: 100%;
-    margin-top: 10%;
-    align-content:flex-start;
-    border: 2px solid pink;
-    .nom-entreprise{
-      display:flex;
+    align-content: flex-start;
+    .nom-entreprise {
+      display: flex;
       align-items: center;
-      padding-left:2px;
+      padding-left: 2px;
     }
   }
 
@@ -149,13 +167,13 @@ br {
   }
   .container {
     flex-flow: row wrap;
+    height: 100vh;
   }
 
-  .label{
+  .label {
     display: block;
     padding-left: 2%;
   }
-
-
-
 }
+
+

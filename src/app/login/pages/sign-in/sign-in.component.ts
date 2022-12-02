@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
   private email!: any;
+  private password!: any;
+
 
   constructor() { }
 
@@ -15,6 +17,10 @@ export class SignInComponent implements OnInit {
 
   emailListener(email:any){
     this.email=email;
+  }
+
+  passwordListener(password:any){
+    this.password=password;
   }
 
 }

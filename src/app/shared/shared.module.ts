@@ -13,7 +13,7 @@ import { RouterModule } from '@angular/router';
     BtnComponent,
     InputComponent,
     CheckboxComponent,
-    LogoComponent
+    LogoComponent,
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { RouterModule } from '@angular/router';
     BtnComponent,
     InputComponent,
     CheckboxComponent,
-    LogoComponent
+    LogoComponent,
   ]
 })
 export class SharedModule { }
