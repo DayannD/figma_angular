@@ -1,12 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BtnComponent } from './btn/btn.component';
-import { InputComponent } from './input/input.component';
-import { CheckboxComponent } from './checkbox/checkbox.component';
-import { LogoComponent } from './logo/logo.component';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
-
+import { BtnComponent } from './btn/btn.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
+import { InputComponent } from './input/input.component';
+import { LogoComponent } from './logo/logo.component';
 
 @NgModule({
   declarations: [
@@ -15,15 +14,15 @@ import { RouterModule } from '@angular/router';
     CheckboxComponent,
     LogoComponent,
   ],
-  imports: [
+  imports: [CommonModule, RouterModule, FormsModule],
+  exports: [
     CommonModule,
     RouterModule,
-  ],
-  exports:[
+    FormsModule,
     BtnComponent,
     InputComponent,
     CheckboxComponent,
     LogoComponent,
-  ]
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}
