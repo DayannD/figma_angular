@@ -1,26 +1,29 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Auth } from 'src/app/core/models/auth';
 
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.scss']
+  styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
-  private email!: any;
-  private password!: any;
+  public auth: Auth = new Auth();
 
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  onSubmit(f: NgForm) {
+    console.log(this.auth);
+    console.log(f.value); // { first: '', last: '' }
   }
 
-  emailListener(email:any){
-    this.email=email;
-  }
+  // emailListener(email:any){
+  //   this.email=email;
+  // }
 
-  passwordListener(password:any){
-    this.password=password;
-  }
-
+  // passwordListener(password:any){
+  //   this.password=password;
+  // }
 }

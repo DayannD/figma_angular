@@ -1,22 +1,17 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-checkbox',
   templateUrl: './checkbox.component.html',
-  styleUrls: ['./checkbox.component.scss']
+  styleUrls: ['./checkbox.component.scss'],
+  viewProviders: [{ provide: ControlContainer, useExisting: NgForm }],
 })
 export class CheckboxComponent implements OnInit {
-  @Output() remember = new EventEmitter<boolean>(false);
+  @Input() model!: any;
+  @Input() name!: string;
 
-  constructor() {
+  constructor() {}
 
-   }
-
-  ngOnInit(): void {
-  }
-
-  checkbox(value:boolean){
-    console.log(value);
-    this.remember.emit(value);
-  }
+  ngOnInit(): void {}
 }
