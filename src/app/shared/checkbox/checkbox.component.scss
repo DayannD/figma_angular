@@ -1,9 +1,12 @@
 input.apple-switch {
+  align-items: center;
   position: relative;
   appearance: none; outline: none;
-  width: 50px; height: 30px;
-  background-color: #ffffff; border: 1px solid #D9DADC;
-  border-radius: 50px; box-shadow: inset -20px 0 0 0 #ffffff;
+  width:  37px; height: 17px;
+  background-color: #ffffff;
+  border: 1px solid #dcd9d94e;
+  border-radius: 50px;
+  box-shadow: inset -20px 0 0 0 #5c5b5b14;
   transition-duration: 200ms;
   }
 

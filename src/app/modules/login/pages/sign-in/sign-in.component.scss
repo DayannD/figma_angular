@@ -1,143 +1,142 @@
-.container {
+.container{
   display: flex;
-  align-items: center;
   flex-flow: column wrap;
+  height: 100vh;
 }
 
-.form {
+.right-block{
   display: flex;
-  flex: none;
   flex-flow: column wrap;
-  align-items: center;
-  width: 100%;
-  gap: 16px;
-  .input {
-    display: flex;
-    flex-flow: column wrap;
-    width: 100%;
-    .champ {
-      width: 100%;
-      padding: 0px;
-      height: 48px;
-      margin: 2px;
-    }
-  }
+  flex: 9.6;
+  padding: 3%;
 }
 
-.img {
-  display: none;
-  flex: none;
-  .img-login {
-    width: 100%;
-  }
-}
-
-.connexion {
+.desktop-align{
   display: flex;
-  flex-direction: row wrap;
-  margin: 12px 0 12px 0;
-  width: 100%;
-  justify-content: space-between;
-  .connexion {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-left: 2em;
-    gap: 16px;
-  }
-  .remember {
-    margin-right: 2em;
-  }
-
-  .check{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-  }
+  flex-flow: column wrap;
+  flex: 9.6;
 }
 
-.titre {
+.form{
+  flex:4;
+}
+
+.logo-desktop{
+  display:none;
+}
+
+.titre{
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
   font-size: 20px;
   line-height: 28px;
-  display: flex;
-  width: 100%;
-  justify-content: flex-start;
-}
-.btn {
-  padding: 10px 24px;
-  width: 100%;
-  margin: 24px 0 24px 0;
-  color: white;
-  justify-content: space-around;
-  align-items: center;
-  /* System-Blue (#007AFF) */
-  background: #007aff;
-  border-radius: 6px;
+  color: #1A1A1A;
 }
 
-.login-form {
+.connexion{
   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 80%;
-  .right-block {
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+  .check{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    padding: 5%;
-    height: 70%;
+  }
+  .remember{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    letter-spacing: 0.3px;
+    margin-left: 5px;
+  }
+  .forgot{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+
+    text-align: right;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    color: #007AFF;
   }
 }
 
-br {
-  background: #e5e5e5;
+.account{
+  display: flex;
+  justify-content: center;
+  .text{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    letter-spacing: 0.3px;
+  }
+  .signup{
+    font-family: 'SF Pro Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    /* identical to box height, or 167% */
+    text-align: right;
+    letter-spacing: 0.3px;
+    text-decoration: none;
+    color: #007AFF;
+  }
 }
 
-.logo {
+.logo{
   display: flex;
-  flex-flow: row nowrap;
-  margin: 62px;
+  flex:6;
+  justify-content: center;
+  margin: 62px 0 62px 0;
+  .logo-mobile{
+    display: flex;
+    align-items: center;
+  }
   .nom-entreprise {
     display: flex;
     align-items: center;
-    padding-left: 2px;
+    margin-left: 8px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 
-.signup {
-  text-decoration: none;
-}
-
-.logo-desktop {
-  display: none;
-}
-
-.label {
-  display: none;
-}
-
-.signature {
+.signature{
   display: flex;
-  justify-items: flex-end;
-  width: 100%;
+  flex:0.4;
   justify-content: space-between;
-  margin: 20px auto;
-}
-
-.forgot{
-  display: flex;
-  align-items: center;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
+  .container{
+    flex-flow: row wrap;
+  }
 
-  .login-form {
+  .right-block{
+    flex:9;
     flex: 3;
+  }
+
+  .logo{
+    display: none;
   }
 
   .img {
@@ -146,34 +145,28 @@ br {
     background-image: url("/assets/img/img-login.png");
     background-position: center center;
     background-size: cover;
-    align-self: stretch;
-    // object-fit: cover;
   }
 
-
-  .logo-desktop {
+  .logo-desktop{
     display: flex;
-    width: 100%;
-    align-content: flex-start;
+    .logo-top{
+      display: flex;
+      align-items: center;
+    }
     .nom-entreprise {
       display: flex;
       align-items: center;
-      padding-left: 2px;
+      margin-left: 8px;
+      font-family: 'Poppins';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
     }
   }
 
-  .logo {
-    display: none;
-  }
-  .container {
-    flex-flow: row wrap;
-    height: 100vh;
-  }
-
-  .label {
-    display: block;
-    padding-left: 2%;
+  .signature{
+    flex: 1;
+    align-items: flex-end;
   }
 }
-
-
