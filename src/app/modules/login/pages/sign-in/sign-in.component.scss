@@ -18,7 +18,7 @@
 }
 
 .form{
-  flex:4;
+  flex:9;
 }
 
 .logo-desktop{
@@ -120,9 +120,58 @@
   display: flex;
   flex:0.4;
   justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%;
+  align-items: center;
+  .signature-gauche{
+    display: flex;
+    align-items: center;
+  }
+  .logo-signature{
+    width: 24px;
+    height: 24px;
+  }
+  .insta{
+    padding: 5px;
+    text-decoration: none;
+    color: #007AFF;
+
+    width: 57px;
+    height: 16px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.4px;
+
+    /* System-Blue (#007AFF) */
+
+    color: #007AFF;
+  }
+  .dateCrea{
+    display: flex;
+    align-items: flex-end;
+    justify-content:flex-end;
+    width: 106px;
+    height: 16px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.4px;
+
+    color: #666666;
+  }
+
 }
+
+
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -167,6 +216,5 @@
 
   .signature{
     flex: 1;
-    align-items: flex-end;
   }
 }

@@ -9,15 +9,28 @@
       justify-content: stretch;
       background: #007aff;
       border-radius: 6px;
+      border: none;
+  }
+  .svg{
+    display: none;
   }
 }
 
 #google{
+  .svg-inline{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   font-family: 'SF Pro Display';
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
   line-height: 20px;
   background: #333333;
+  .svg{
+    display:block;
+    margin-right: 3px;
+  }
  }
 
