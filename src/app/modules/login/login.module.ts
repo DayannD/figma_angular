@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { SharedModule } from '../../shared/shared.module';
 import { LoginRoutingModule } from './login-routing.module';
@@ -12,6 +13,6 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     ForgotPasswordComponent,
     SignUpComponent,
   ],
-  imports: [LoginRoutingModule ,SharedModule ],
+  imports: [LoginRoutingModule ,SharedModule ,ReactiveFormsModule],
 })
 export class LoginModule {}

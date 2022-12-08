@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators, NgModel } from '@angular/forms';
 import { Auth } from 'src/app/core/models/auth';
 
 @Component({
@@ -9,8 +9,25 @@ import { Auth } from 'src/app/core/models/auth';
 })
 export class SignInComponent implements OnInit {
   public auth: Auth = new Auth();
+  emailForm!: FormGroup;
 
-  constructor() {}
+  myusername: string = '';
+  emailRegex =
+    '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+
+  constructor() {
+    this.emailForm = new FormGroup({
+      email: new FormControl('', {
+        validators: [Validators.required, Validators.pattern(this.emailRegex)],
+        updateOn: 'blur',
+      }),
+    });
+  }
+
+
+  get validator() {
+    return true;
+  }
 
   ngOnInit(): void {}
 

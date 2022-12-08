@@ -13,11 +13,11 @@
           <h2 class="titre">Nice to meet you again</h2>
         </div>
          <!-- /********************** form **********************/ -->
-        <form class="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <form class="form form-control"  #f="ngForm" (ngSubmit)="onSubmit(f)">
           <div class="input">
             <div>
-              <app-input cssLabel="label" css="champ" type="text" name="Login" label="Email or phone number"
-                [model]="auth.email">
+              <app-input cssLabel="label" required minlength="4" css="champ" type="text" name="Login" label="Email or phone number"
+                [model]="auth.email" >
               </app-input>
             </div>
             <div>
