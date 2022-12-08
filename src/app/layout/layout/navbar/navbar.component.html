@@ -5,20 +5,11 @@
   </div>
 
   <section class="menu">
+    <div class="selection">
+
       <ng-container *ngFor="let url of item">
         <a [routerLink]="[url]" routerLinkActive="focus"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></a>
-        <div *ngIf="page == url;else elseBlock">
-          <!-- <li class="focus" (click)="navTo(url)"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></li> -->
-        </div>
-        <ng-template #elseBlock>
-          <!-- <li (click)="navTo(url)"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></li> -->
-        </ng-template>
       </ng-container>
-      <!-- <li routerLink="activity"><img src="/assets/img/activity-icon.png" alt="Activity"></li>
-            <li routerLink="ebooks"><img src="/assets/img/ebooks-icon.png" alt="Ebooks"></li>
-            <li routerLink="settings"><img src="/assets/img/settings-icon.png" alt="Settings"></li>
-            <li routerLink="messenger"><img src="/assets/img/messenger-icon.png" alt="Messenger"></li>
-            <li routerLink="file"><img src="/assets/img/files-icon.png" alt="Files"></li> -->
-
+    </div>
   </section>
 </div>

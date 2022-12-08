@@ -8,19 +8,20 @@
           <div class="logo-top"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
           <div class="nom-entreprise">UI UNICORE</div>
         </div>
-
+        <!-- /********************** block droit **********************/ -->
         <div>
           <h2 class="titre">Nice to meet you again</h2>
         </div>
+         <!-- /********************** form **********************/ -->
         <form class="form" #f="ngForm" (ngSubmit)="onSubmit(f)">
           <div class="input">
             <div>
-              <app-input cssLabel="label" css="champ" type="text" name="email" label="Email or number"
+              <app-input cssLabel="label" css="champ" type="text" name="Login" label="Email or phone number"
                 [model]="auth.email">
               </app-input>
             </div>
             <div>
-              <app-input cssLabel="label" css="champ" type="password" name="password" label="Enter password"
+              <app-input cssLabel="label" css="champ" type="password" name="Password" label="Enter password"
                 [model]="auth.password">
               </app-input>
             </div>
@@ -30,11 +31,12 @@
               <app-checkbox name="remenber" [model]="auth.remenber"></app-checkbox>
               <span class="remember">remember me</span>
             </div>
-            <a routerLink="/forgot-password" class="forgot"><span>forgot password?</span></a>
+            <a routerLink="/forgot-password" class="forgot"><span>Forgot password?</span></a>
+            <!-- /********************** btn **********************/ -->
           </div>
           <app-btn
-            name="Sign in" css="btn">
-          </app-btn>
+          name="Sign in" css="btn">
+        </app-btn>
         </form>
 
         <hr width="100%" color="#E5E5E5">
@@ -47,6 +49,8 @@
           <span class="text">Don't have an account ? <a class="signup" routerLink="/register">Sign up now</a></span>
         </div>
       </div>
+       <!-- /********************** logo **********************/ -->
+
       <div class="logo">
         <div class="logo-mobile"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
         <div class="nom-entreprise">UI UNICORE</div>
