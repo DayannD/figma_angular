@@ -13,6 +13,6 @@ import { SignUpComponent } from './pages/sign-up/sign-up.component';
     ForgotPasswordComponent,
     SignUpComponent,
   ],
-  imports: [LoginRoutingModule ,SharedModule ,ReactiveFormsModule],
+  imports: [LoginRoutingModule ,SharedModule ,ReactiveFormsModule ],
 })
 export class LoginModule {}

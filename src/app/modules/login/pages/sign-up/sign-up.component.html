@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="img">
   </div>
@@ -8,60 +9,48 @@
           <div class="logo-top"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
           <div class="nom-entreprise">UI UNICORE</div>
         </div>
-
+        <!-- /********************** block droit **********************/ -->
         <div>
-          <h2 class="titre">Enregistrer vous</h2>
+          <h2 class="titre">Nice to meet you again</h2>
         </div>
-        <form class="form" method="post">
+         <!-- /********************** form **********************/ -->
+        <form class="form form-control" [formGroup]="emailForm"  (ngSubmit)="onSubmit(emailForm.value)">
           <div class="input">
             <div>
-
-              <app-input cssLabel="label" css="champ" type="text" name="email" label="Email or number"></app-input>
-              <!-- <app-input
-              cssLabel="label" css="champ" type="text"
-              name="email" label="Email or number"
-              (emitOutput)="emailListener($event)">
-            </app-input> -->
-              <!-- <input class="champ" type="text" id="login" name="email_num" placeholder="Email or number"> -->
+              <app-input-with-out-ng-form cssLabel="label" formControlName="email"
+                      css="champ" type="text" name="Login" label="Email or phone number"
+                      (value)="eventEmitter($event)"
+                >
+              
+              </app-input-with-out-ng-form>
             </div>
             <div>
-
-              <app-input cssLabel="label" css="champ" type="password" name="password" label="Enter password">
-              </app-input>
-              <!-- <label class="label" for="champ">Password</label> -->
-              <!-- <app-input
-              cssLabel="label" css="champ" type="password"
-              name="password" label="Enter password"
-              (emitOutput)="emailListener($event)">
-            </app-input> -->
-              <!-- <input class="champ" type="password" id="password" name="password" placeholder="Enter password"> -->
+              <app-input-with-out-ng-form cssLabel="label" formControlName="password" css="champ" type="text" name="Login" label="Email or phone number"
+                >
+              </app-input-with-out-ng-form>
             </div>
             <div>
-
-              <app-input cssLabel="label" css="champ" type="password" name="password" label="Enter password">
-              </app-input>
-              <!-- <label class="label" for="champ">Password</label> -->
-              <!-- <app-input
-              cssLabel="label" css="champ" type="password"
-              name="password" label="Enter password"
-              (emitOutput)="emailListener($event)">
-            </app-input> -->
-              <!-- <input class="champ" type="password" id="password" name="password" placeholder="Enter password"> -->
+              <app-input-with-out-ng-form cssLabel="label" formControlName="samePassword" css="champ" type="password" name="Password" label="Enter password"
+              >
+              </app-input-with-out-ng-form>
             </div>
           </div>
-          <app-btn name="resgister" css="btn"></app-btn>
+          <app-btn
+          name="Sign in" css="btn">
+        </app-btn>
         </form>
+       <!-- /********************** logo **********************/ -->
 
-        <app-btn></app-btn>
-
-        <!-- <button class="btn"><span class="text">Sign In</span></button> -->
       <div class="logo">
         <div class="logo-mobile"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
         <div class="nom-entreprise">UI UNICORE</div>
       </div>
       <div class="signature">
-        <a class="insta" href="">@uiunicom</a>
-        <span class="dateCrea">Perfect Login 2021</span>
+        <div class="signature-gauche">
+          <img class="logo-signature" src="/assets/img/logo-unicorn.png" alt="logo-signature">
+          <a class="insta" href="">@uiunicom</a>
+        </div>
+        <span class="dateCrea">©Perfect Login 2021</span>
       </div>
     </div>
   </div>

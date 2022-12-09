@@ -6,6 +6,7 @@ import { BtnComponent } from './btn/btn.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
 import { InputComponent } from './input/input.component';
 import { LogoComponent } from './logo/logo.component';
+import { InputWithOutNgFormComponent } from './input-with-out-ng-form/input-with-out-ng-form.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { LogoComponent } from './logo/logo.component';
     InputComponent,
     CheckboxComponent,
     LogoComponent,
+    InputWithOutNgFormComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [
@@ -23,6 +25,7 @@ import { LogoComponent } from './logo/logo.component';
     InputComponent,
     CheckboxComponent,
     LogoComponent,
+    InputWithOutNgFormComponent,
   ],
 })
 export class SharedModule {}
