@@ -12,7 +12,7 @@ export class InputWithOutNgFormComponent implements OnInit {
   @Input() css!: string;
   @Input() name!: string;
   @Input() cssLabel!: string;
-  @Output() value: EventEmitter<string> = new EventEmitter<string>();
+  @Output() value: EventEmitter<any> = new EventEmitter<any>();
 
   public isPassword!:boolean;
 
@@ -21,6 +21,10 @@ export class InputWithOutNgFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.isPassword = this.type  == "password" ? true : false;
+  }
+
+  ngOnChange(): void{
+    console.log(this.value);
   }
 
   public change(){

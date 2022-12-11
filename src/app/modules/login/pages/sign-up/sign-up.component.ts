@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Auth } from 'src/app/core/models/auth';
 
 
@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
 
   public auth: Auth = new Auth();
   emailForm!: FormGroup;
+
   private passwordRegex =
   '?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$';
 
@@ -19,19 +20,19 @@ export class SignUpComponent implements OnInit {
 
   ngOnInit(): void {
     this.emailForm = this.formBuilder.group({
-      email:new FormControl(['',[
+      email: ['',[
         Validators.email,
         Validators.minLength(4),
         Validators.required
-      ]]),
-      password:new FormControl(['',[
+      ]],
+      password:['',[
        //   Validators.pattern(this.passwordRegex),
           Validators.required
-      ]]),
-      samePassword: new FormControl(['',[
+      ]],
+      samePassword:['',[
    //     Validators.pattern(this.passwordRegex),
         Validators.required
-      ]])});
+      ]]});
   }
 
   get email(){
@@ -43,15 +44,28 @@ export class SignUpComponent implements OnInit {
   }
 
   get samePassword(){
+    console.log(this.samePassword)
     return this.emailForm.get('samePassword');
   }
 
-  onSubmit(f: NgForm){
-    console.log(f);
+  set email(data:any){
+    this.emailForm.get('email')?.setValue(data);
+  }
+
+  set password(data){
+    this.emailForm.get('email')?.setValue(data);
+  }
+
+  set samePassword(data){
+    this.emailForm.get('email')?.setValue(data);
+  }
+
+  onSubmit(){
+    console.log(this.emailForm);
   }
 
   eventEmitter(event:Event){
-    console.log(event);
+
   }
 
 }
