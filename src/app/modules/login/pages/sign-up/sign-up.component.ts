@@ -35,6 +35,7 @@ export class SignUpComponent implements OnInit {
       ]]});
   }
 
+
   get email(){
     return this.emailForm.get('email');
   }
@@ -48,18 +49,6 @@ export class SignUpComponent implements OnInit {
     return this.emailForm.get('samePassword');
   }
 
-  set email(data:any){
-    this.emailForm.get('email')?.setValue(data);
-  }
-
-  set password(data){
-    this.emailForm.get('email')?.setValue(data);
-  }
-
-  set samePassword(data){
-    this.emailForm.get('email')?.setValue(data);
-  }
-
   onSubmit(){
     console.log(this.emailForm);
   }
@@ -67,5 +56,4 @@ export class SignUpComponent implements OnInit {
   eventEmitter(event:Event){
 
   }
-
 }

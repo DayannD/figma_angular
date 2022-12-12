@@ -17,17 +17,18 @@
           <div class="input">
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="email" css="champ" type="text" name="email"
-                label="Email or phone number" (value)="email($event)">
+                label="Email or phone number" (value)="eventEmitter($event)" ngDefaultControl>
               </app-input-with-out-ng-form>
+
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="password" css="champ" type="password"
-                name="password" label="Enter password" (value)="eventEmitter($event)">
+                name="password" label="Enter password" (value)="eventEmitter($event)" ngDefaultControl>
               </app-input-with-out-ng-form>
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="samePassword" css="champ" type="password"
-                name="Password" label="Confirme password" (value)="eventEmitter($event)">
+                name="Password" label="Confirme password" (value)="eventEmitter($event)" ngDefaultControl>
               </app-input-with-out-ng-form>
             </div>
           </div>
@@ -40,13 +41,13 @@
           <div class="logo-mobile"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
           <div class="nom-entreprise">UI UNICORE</div>
         </div>
-        <div class="signature">
-          <div class="signature-gauche">
-            <img class="logo-signature" src="/assets/img/logo-unicorn.png" alt="logo-signature">
-            <a class="insta" href="">@uiunicom</a>
-          </div>
-          <span class="dateCrea">©Perfect Login 2021</span>
+      </div>
+      <div class="signature">
+        <div class="signature-gauche">
+          <img class="logo-signature" src="/assets/img/logo-unicorn.png" alt="logo-signature">
+          <a class="insta" href="">@uiunicom</a>
         </div>
+        <span class="dateCrea">©Perfect Login 2021</span>
       </div>
     </div>
   </div>
