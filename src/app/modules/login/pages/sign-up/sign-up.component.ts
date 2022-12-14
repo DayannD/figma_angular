@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
 
   public auth: Auth = new Auth();
   emailForm!: FormGroup;
+  submitted:boolean = false;
 
   private passwordRegex =
   '?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$';
@@ -48,8 +49,16 @@ export class SignUpComponent implements OnInit {
     console.log(this.samePassword)
     return this.emailForm.get('samePassword');
   }
+  get f(){
+    return this.emailForm.controls;
+  }
 
   onSubmit(){
+    this.submitted = true;
+    if(this.emailForm.invalid){
+      return;
+    }
+
     console.log(this.emailForm);
   }
 

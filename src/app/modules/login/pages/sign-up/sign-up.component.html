@@ -16,20 +16,36 @@
         <form class="form" [formGroup]="emailForm" (ngSubmit)="onSubmit()">
           <div class="input">
             <div>
-              <app-input-with-out-ng-form cssLabel="label" formControlName="email" css="champ" type="text" name="email"
-                label="Email or phone number" (value)="eventEmitter($event)" ngDefaultControl>
+              <app-input-with-out-ng-form
+                  cssLabel="label" formControlName="email" css="champ" type="text" name="email"
+                  label="Email or phone number" (value)="eventEmitter($event)" ngDefaultControl
+                >
               </app-input-with-out-ng-form>
-
+              <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['required']">
+                  email is required
+                </div>
+              </div>
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="password" css="champ" type="password"
                 name="password" label="Enter password" (value)="eventEmitter($event)" ngDefaultControl>
               </app-input-with-out-ng-form>
+              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+                <div *ngIf="f['password'].errors['required']">
+                  password is required
+                </div>
+              </div>
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="samePassword" css="champ" type="password"
                 name="Password" label="Confirme password" (value)="eventEmitter($event)" ngDefaultControl>
               </app-input-with-out-ng-form>
+              <div *ngIf="submitted && f['samePassword'].errors" class="invalid-feedback">
+                <div *ngIf="f['samePassword'].errors['required']">
+                  password is required
+                </div>
+              </div>
             </div>
           </div>
           <app-btn name="Sign in" css="btn" type="submit">
