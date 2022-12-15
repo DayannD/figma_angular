@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Auth } from 'src/app/core/models/auth';
 
 
@@ -22,9 +22,9 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {
     this.emailForm = this.formBuilder.group({
       email: ['',[
+        Validators.required,
         Validators.email,
-        Validators.minLength(4),
-        Validators.required
+        Validators.minLength(4)
       ]],
       password:['',[
        //   Validators.pattern(this.passwordRegex),
@@ -42,6 +42,7 @@ export class SignUpComponent implements OnInit {
   }
 
   get password(){
+    console.log(this.password);
     return this.emailForm.get('password');
   }
 

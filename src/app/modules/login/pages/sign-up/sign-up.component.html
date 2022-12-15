@@ -33,11 +33,11 @@
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="password" css="champ" type="password"
                 name="password" label="Enter password" (value)="eventEmitter($event)" ngDefaultControl>
-                <div *ngIf="!password?.touched && password?.errors"  class="invalid-feedback">
-                  <span *ngIf="password?.errors!required" class="wrong">password is required</span>
-                  <span *ngIf="password?.touched && password?.value ==''" class="wrong">password is required</span>
-              </div>
               </app-input-with-out-ng-form>
+              <div *ngIf="f['password']?.touched"  class="invalid-feedback">
+                <span *ngIf="f['password']?.errors!['required']" class="wrong">password is required</span>
+                <span *ngIf="f['password']?.touched && f['password']?.value ==''" class="wrong">password is required</span>
+            </div>
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="samePassword" css="champ" type="password"

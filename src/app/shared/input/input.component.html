@@ -6,6 +6,10 @@
       </svg>
 
   <input pattern [class]="css" [name]="name" [type]="type" [placeholder]="label" [ngModel]="model" >
+  <div *ngIf="model?.touched"  class="">
+    <span *ngIf="model?.errors!['required']" class="wrong">password is required</span>
+    <span *ngIf="model?.touched && model?.value ==''" class="wrong">password is required</span>
+  </div>
 
 </div>
 

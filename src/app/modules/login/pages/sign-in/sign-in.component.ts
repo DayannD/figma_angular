@@ -29,6 +29,10 @@ export class SignInComponent implements OnInit {
     return true;
   }
 
+  get email(){
+    return this.emailForm.get('email');
+  }
+
   ngOnInit(): void {}
 
   onSubmit(f: NgForm) {
