@@ -5,7 +5,7 @@
     <div class="desktop-align">
       <div class="form">
         <div class="logo-desktop">
-          <div class="logo-top"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
+          <div class="logo-top"><img class="rotate" src="/assets/img/solo-logo-octom.png" alt="logo-login" /></div>
           <div class="nom-entreprise">UI UNICORE</div>
         </div>
         <!-- /********************** block droit **********************/ -->
@@ -22,20 +22,22 @@
                 >
               </app-input-with-out-ng-form>
               <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                <div *ngIf="f['email'].errors['email']">
+                  <span class="wrong">email is wrong</span>
+                </div>
                 <div *ngIf="f['email'].errors['required']">
-                  email is required
+                  <span class="wrong">email is required</span>
                 </div>
               </div>
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="password" css="champ" type="password"
                 name="password" label="Enter password" (value)="eventEmitter($event)" ngDefaultControl>
-              </app-input-with-out-ng-form>
-              <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
-                <div *ngIf="f['password'].errors['required']">
-                  password is required
-                </div>
+                <div *ngIf="!password?.touched && password?.errors"  class="invalid-feedback">
+                  <span *ngIf="password?.errors!required" class="wrong">password is required</span>
+                  <span *ngIf="password?.touched && password?.value ==''" class="wrong">password is required</span>
               </div>
+              </app-input-with-out-ng-form>
             </div>
             <div>
               <app-input-with-out-ng-form cssLabel="label" formControlName="samePassword" css="champ" type="password"
@@ -43,7 +45,15 @@
               </app-input-with-out-ng-form>
               <div *ngIf="submitted && f['samePassword'].errors" class="invalid-feedback">
                 <div *ngIf="f['samePassword'].errors['required']">
-                  password is required
+                  <span class="wrong">password is required</span>
+
+                  <!-- bug, je ne comprend pas pourquoi -->
+                  <!-- <div *ngIf="f['email'].touched" class="invalid-feedback">
+                    <div *ngIf="f['samePassword'].errors?.['required']">
+                      <span class="wrong">password is required</span>
+                    </div>
+                  </div> -->
+
                 </div>
               </div>
             </div>
@@ -54,7 +64,7 @@
         <!-- /********************** logo **********************/ -->
 
         <div class="logo">
-          <div class="logo-mobile"><img src="/assets/img/logo-login.png" alt="logo-login" /></div>
+          <div class="logo-mobile"><img src="/assets/img/solo-logo-octom.png" alt="logo-login" /></div>
           <div class="nom-entreprise">UI UNICORE</div>
         </div>
       </div>

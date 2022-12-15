@@ -5,6 +5,7 @@
 }
 
 .right-block{
+  background-color: #131517 ;
   display: flex;
   flex-flow: column wrap;
   flex: 9.6;
@@ -32,7 +33,7 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 28px;
-  color: #1A1A1A;
+  color: #E9E9E9;
 }
 
 .connexion{
@@ -47,6 +48,7 @@
   }
   .remember{
     font-family: 'SF Pro Display';
+    color: #E9E9E9;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -58,6 +60,7 @@
   }
   .forgot{
     font-family: 'SF Pro Display';
+    color: #E9E9E9;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -76,6 +79,7 @@
   justify-content: center;
   .text{
     font-family: 'SF Pro Display';
+    color: #E9E9E9;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -86,6 +90,7 @@
   .signup{
     font-family: 'SF Pro Display';
     font-style: normal;
+    color: #E9E9E9;
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
@@ -108,6 +113,7 @@
   }
   .nom-entreprise {
     display: flex;
+    color: #E9E9E9;
     align-items: center;
     margin-left: 8px;
     font-family: 'Poppins';
@@ -193,7 +199,7 @@
   .img {
     display: flex;
     flex: 7;
-    background-image: url("/assets/img/img-login.png");
+    background-image: url("/assets/img/img-social-login.jpg");
     background-position: center center;
     background-size: cover;
   }
@@ -206,6 +212,7 @@
     }
     .nom-entreprise {
       display: flex;
+      color: #E9E9E9;
       align-items: center;
       margin-left: 8px;
       font-family: 'Poppins';

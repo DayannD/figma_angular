@@ -5,6 +5,7 @@
 }
 
 .right-block{
+  background-color: #131517 ;
   display: flex;
   flex-flow: column wrap;
   flex: 9.6;
@@ -18,7 +19,7 @@
 }
 
 .form{
-  flex:4;
+  flex:9;
 }
 
 .logo-desktop{
@@ -29,9 +30,10 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 600;
+  font-weight: bold;
   font-size: 20px;
   line-height: 28px;
-  color: #1A1A1A;
+  color: #E9E9E9;
 }
 
 .connexion{
@@ -39,12 +41,14 @@
   flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: 15px;
   .check{
     display: flex;
     align-items: center;
   }
   .remember{
     font-family: 'SF Pro Display';
+    color: #E9E9E9;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -56,6 +60,7 @@
   }
   .forgot{
     font-family: 'SF Pro Display';
+    color: #E9E9E9;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -74,6 +79,7 @@
   justify-content: center;
   .text{
     font-family: 'SF Pro Display';
+    color: #E9E9E9;
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
@@ -84,6 +90,7 @@
   .signup{
     font-family: 'SF Pro Display';
     font-style: normal;
+    color: #E9E9E9;
     font-weight: 400;
     font-size: 12px;
     line-height: 20px;
@@ -106,6 +113,7 @@
   }
   .nom-entreprise {
     display: flex;
+    color: #E9E9E9;
     align-items: center;
     margin-left: 8px;
     font-family: 'Poppins';
@@ -120,9 +128,84 @@
   display: flex;
   flex:0.4;
   justify-content: space-between;
-  padding-left: 5%;
-  padding-right: 5%;
+  align-items: center;
+  .signature-gauche{
+    display: flex;
+    align-items: center;
+  }
+  .logo-signature{
+    width: 24px;
+    height: 24px;
+  }
+  .insta{
+    padding: 5px;
+    text-decoration: none;
+    color: #007AFF;
+
+    width: 57px;
+    height: 16px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.4px;
+
+    /* System-Blue (#007AFF) */
+
+    color: #007AFF;
+  }
+  .dateCrea{
+    display: flex;
+    align-items: flex-end;
+    justify-content:flex-end;
+    width: 106px;
+    height: 16px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height, or 133% */
+
+    letter-spacing: -0.4px;
+
+    color: #666666;
+  }
+
 }
+
+.rotate {
+  animation: rotation 8s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.wrong{
+  width: 106px;
+  height: 16px;
+  color: red;
+  border: red;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: -0.4px;
+
+}
+
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
@@ -142,7 +225,7 @@
   .img {
     display: flex;
     flex: 7;
-    background-image: url("/assets/img/img-login.png");
+    background-image: url("/assets/img/img-social-login.jpg");
     background-position: center center;
     background-size: cover;
   }
@@ -155,6 +238,7 @@
     }
     .nom-entreprise {
       display: flex;
+      color: #E9E9E9;
       align-items: center;
       margin-left: 8px;
       font-family: 'Poppins';
@@ -167,6 +251,5 @@
 
   .signature{
     flex: 1;
-    align-items: flex-end;
   }
 }
