@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { from } from 'rxjs';
 import { Auth } from 'src/app/core/models/auth';
 
 
@@ -33,9 +34,26 @@ export class SignUpComponent implements OnInit {
       samePassword:['',[
    //     Validators.pattern(this.passwordRegex),
         Validators.required
-      ]]});
+      ]],
+      telephones: this.formBuilder.array([]),
+      terms:['',[
+        //     Validators.pattern(this.passwordRegex),
+             Validators.required,
+             Validators.minLength(9),
+             Validators.maxLength(11)
+           ]
+          ]});
+
+          this.addTelephone();
   }
 
+  get telephones() {
+    return this.emailForm.get('telephones') as FormArray;
+  }
+
+  get terms(){
+    return this.emailForm.get('terms');
+  }
 
   get email(){
     return this.emailForm.get('email');
@@ -50,10 +68,30 @@ export class SignUpComponent implements OnInit {
     console.log(this.samePassword)
     return this.emailForm.get('samePassword');
   }
+
   get f(){
     return this.emailForm.controls;
   }
 
+  public addTelephone(){
+    let telephone = this.formBuilder.group({
+      phoneNumber: ['', [
+        Validators.required,
+        Validators.minLength(9),
+        Validators.maxLength(10),
+        Validators.pattern('^[0-9]*$')
+      ]]
+    });
+    if(this.telephones.length < 3)
+    this.telephones.push(telephone); // 0 => phone // 1 => ph
+
+  console.log(this.telephones);
+  }
+
+
+  public  getNumberTelephone(index: number) {
+      return this.telephones.controls[index].get('telephone');
+  }
   onSubmit(){
     this.submitted = true;
 
@@ -62,6 +100,26 @@ export class SignUpComponent implements OnInit {
     }
 
     console.log(this.emailForm);
+  }
+
+  setSamePassword(event: Event){
+    this.emailForm.controls['samePassword'].setValue(event);
+  }
+
+  setPassword(event: Event){
+    this.emailForm.controls['password'].setValue(event);
+  }
+
+  setEmail(event: Event){
+    this.emailForm.controls['email'].setValue(event);
+  }
+
+  setTelephone(event: Event,index : number){
+    this.telephones.controls[index].setValue(event);
+  }
+
+  remove(index: number){
+    this.telephones.removeAt(index);
   }
 
   eventEmitter(event:Event){

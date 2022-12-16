@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ControlContainer, NgForm } from '@angular/forms';
 
 @Component({
@@ -10,8 +10,11 @@ import { ControlContainer, NgForm } from '@angular/forms';
 export class CheckboxComponent implements OnInit {
   @Input() model!: any;
   @Input() name!: string;
+  @Output() checkBoxEmitter: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 }

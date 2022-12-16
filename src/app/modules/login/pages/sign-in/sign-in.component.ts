@@ -8,6 +8,7 @@ import { Auth } from 'src/app/core/models/auth';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
+  submitted:boolean = false;
   public auth: Auth = new Auth();
   emailForm!: FormGroup;
 
@@ -18,12 +19,18 @@ export class SignInComponent implements OnInit {
   constructor() {
     this.emailForm = new FormGroup({
       email: new FormControl('', {
-        validators: [Validators.required, Validators.pattern(this.emailRegex)],
+        validators: [Validators.required, Validators.email],
         updateOn: 'blur',
       }),
+      password: new FormControl('', {
+        validators: [Validators.required],
+      })
     });
   }
 
+  get password() {
+    return this.emailForm.get('password');
+  }
 
   get validator() {
     return true;
@@ -36,6 +43,7 @@ export class SignInComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(f: NgForm) {
+    this.submitted = true;
     console.log(this.auth);
     console.log(f.value); // { first: '', last: '' }
   }
