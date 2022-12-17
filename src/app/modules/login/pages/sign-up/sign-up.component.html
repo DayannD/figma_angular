@@ -59,20 +59,22 @@
             <div formArrayName="telephones">
               <div *ngFor="let telephone of telephones.controls; let i=index;let first=first " [formGroupName]="i">
                 <app-input-with-out-ng-form
-                    cssLabel="label" formControlName="telephone" css="champ" type="text"
+                    cssLabel="label" formControlName="phoneNumber" css="champ" type="text"
                     name="telephone" label="Enter your phone" (value)="setTelephone($event,i)"
                     ngDefaultControl
                     >
                 </app-input-with-out-ng-form>
-                <div *ngIf="submitted && getNumberTelephone(i)?.errors" class="invalid-feedback">
+                <span (click)="remove(i)" *ngIf="!first">Remove</span>
+                <div *ngIf="submitted && getPhoneNumber(i)?.errors" class="invalid-feedback">
                     <span class="wrong">telephone is required</span>
                 </div>
               </div>
             </div>
           </div>
-          <app-btn name="ajout telephone" css="btn" (clickEmitter)="addTelephone()">
-          </app-btn>
+          <!-- <app-btn name="ajout telephone" css="btn" (clickEmitter)="addTelephone()">
+          </app-btn> -->
           <!-- <button (click)="addTelephone()">ajoute telephone</button> -->
+          <app-btn (click)="addTelephone()" name="ajout telephone" css="btn"></app-btn>
 
           <app-btn name="Sign in" css="btn" type="submit">
           </app-btn>

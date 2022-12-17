@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
            ]
           ]});
 
-          this.addTelephone();
+    this.addTelephone();
   }
 
   get telephones() {
@@ -79,7 +79,6 @@ export class SignUpComponent implements OnInit {
         Validators.required,
         Validators.minLength(9),
         Validators.maxLength(10),
-        Validators.pattern('^[0-9]*$')
       ]]
     });
     if(this.telephones.length < 3)
@@ -88,8 +87,11 @@ export class SignUpComponent implements OnInit {
   console.log(this.telephones);
   }
 
+  getPhoneNumber(index: number){
+    return this.telephones.controls[index].get('phoneNumber')
+  }
 
-  public  getNumberTelephone(index: number) {
+  getNumberTelephone(index: number) {
       return this.telephones.controls[index].get('telephone');
   }
   onSubmit(){
@@ -115,7 +117,7 @@ export class SignUpComponent implements OnInit {
   }
 
   setTelephone(event: Event,index : number){
-    this.telephones.controls[index].setValue(event);
+    this.telephones.controls[index].setValue({phoneNumber:event});
   }
 
   remove(index: number){
