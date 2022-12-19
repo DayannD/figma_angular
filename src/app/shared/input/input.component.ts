@@ -16,7 +16,7 @@ export class InputComponent implements OnInit {
   @Input() name!: string;
   @Input() cssLabel!: string;
   @Input() model!: any;
-
+  
   public isPassword!:boolean;
 
   constructor() {

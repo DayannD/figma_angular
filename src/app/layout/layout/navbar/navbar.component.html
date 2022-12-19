@@ -7,8 +7,8 @@
   <section class="menu">
     <div class="selection">
 
-      <ng-container *ngFor="let url of item">
-        <a [routerLink]="[url]" routerLinkActive="focus"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></a>
+      <ng-container class="item-selection" *ngFor="let url of item">
+        <a [routerLink]="[url]" class="item" routerLinkActive="focus"><img src="/assets/img/{{url}}-icon.png" alt={{url}}></a>
       </ng-container>
     </div>
   </section>

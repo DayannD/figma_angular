@@ -1,7 +1,13 @@
-<nav class="header">
-  <div class="form">
-    <form class="input">
-      <input type="text" id="search" name="search" placeholder="Search anything..." required>
-    </form>
-  </div>
-</nav>
+<div class="element">
+  <nav class="header">
+    <div class="form">
+      <form class="input">
+        <div>
+          <app-input cssLabel="label" css="acceuil" type="text"
+          label="search..." [model]="search">
+          </app-input>
+        </div>
+      </form>
+    </div>
+  </nav>
+</div>

@@ -1,9 +1,16 @@
 .section{
   /* margin-top: 5%;
   margin-left: 64px; */
+  display: flex;
+  flex-flow: column wrap;
+  padding-left: 2em;
+  padding-right: 2em;
   width: 333px;
-  height: 947px;
-
+  height:100%;
+  display: flex;
+  flex:9;
+  left: 94px;
+  top: 60px;
 
   background: #212229;
  /* position: relative;

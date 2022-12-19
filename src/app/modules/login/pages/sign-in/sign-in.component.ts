@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, NgForm, Validators, NgModel } from '@angular/forms';
-import { Auth } from 'src/app/core/models/auth';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
+import { Auth } from 'src/app/core/models/auth/auth';
 
 @Component({
   selector: 'app-sign-in',
@@ -8,13 +8,12 @@ import { Auth } from 'src/app/core/models/auth';
   styleUrls: ['./sign-in.component.scss'],
 })
 export class SignInComponent implements OnInit {
-  submitted:boolean = false;
+  submitted: boolean = false;
   public auth: Auth = new Auth();
   emailForm!: FormGroup;
 
   myusername: string = '';
-  emailRegex =
-    '^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$';
+  emailRegex = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
 
   constructor() {
     this.emailForm = new FormGroup({
@@ -24,7 +23,7 @@ export class SignInComponent implements OnInit {
       }),
       password: new FormControl('', {
         validators: [Validators.required],
-      })
+      }),
     });
   }
 
@@ -36,7 +35,7 @@ export class SignInComponent implements OnInit {
     return true;
   }
 
-  get email(){
+  get email() {
     return this.emailForm.get('email');
   }
 

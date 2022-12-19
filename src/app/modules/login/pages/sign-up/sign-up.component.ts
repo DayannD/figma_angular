@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { from } from 'rxjs';
-import { Auth } from 'src/app/core/models/auth';
-
+import { Auth } from 'src/app/core/models/auth/auth';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,39 +8,46 @@ import { Auth } from 'src/app/core/models/auth';
   styleUrls: ['./sign-up.component.scss'],
 })
 export class SignUpComponent implements OnInit {
-
   public auth: Auth = new Auth();
   emailForm!: FormGroup;
-  submitted:boolean = false;
+  submitted: boolean = false;
 
   private passwordRegex =
-  '?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$';
+    '?=^.{8,}$)((?=.*d)|(?=.*W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$';
 
-  constructor(private formBuilder:FormBuilder) {}
+  constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
     this.emailForm = this.formBuilder.group({
-      email: ['',[
-        Validators.required,
-        Validators.email,
-        Validators.minLength(4)
-      ]],
-      password:['',[
-       //   Validators.pattern(this.passwordRegex),
-          Validators.required
-      ]],
-      samePassword:['',[
-   //     Validators.pattern(this.passwordRegex),
-        Validators.required
-      ]],
+      email: [
+        '',
+        [Validators.required, Validators.email, Validators.minLength(4)],
+      ],
+      password: [
+        '',
+        [
+          //   Validators.pattern(this.passwordRegex),
+          Validators.required,
+        ],
+      ],
+      samePassword: [
+        '',
+        [
+          //     Validators.pattern(this.passwordRegex),
+          Validators.required,
+        ],
+      ],
       telephones: this.formBuilder.array([]),
-      terms:['',[
-        //     Validators.pattern(this.passwordRegex),
-             Validators.required,
-             Validators.minLength(9),
-             Validators.maxLength(11)
-           ]
-          ]});
+      terms: [
+        '',
+        [
+          //     Validators.pattern(this.passwordRegex),
+          Validators.required,
+          Validators.minLength(9),
+          Validators.maxLength(11),
+        ],
+      ],
+    });
 
     this.addTelephone();
   }
@@ -51,80 +56,81 @@ export class SignUpComponent implements OnInit {
     return this.emailForm.get('telephones') as FormArray;
   }
 
-  get terms(){
+  get terms() {
     return this.emailForm.get('terms');
   }
 
-  get email(){
+  get email() {
     return this.emailForm.get('email');
   }
 
-  get password(){
+  get password() {
     console.log(this.password);
     return this.emailForm.get('password');
   }
 
-  get samePassword(){
-    console.log(this.samePassword)
+  get samePassword() {
+    console.log(this.samePassword);
     return this.emailForm.get('samePassword');
   }
 
-  get f(){
+  get f() {
     return this.emailForm.controls;
   }
 
-  public addTelephone(){
+  public addTelephone() {
     let telephone = this.formBuilder.group({
-      phoneNumber: ['', [
-        Validators.required,
-        Validators.minLength(9),
-        Validators.maxLength(10),
-      ]]
+      phoneNumber: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(9),
+          Validators.maxLength(10),
+        ],
+      ],
     });
-    if(this.telephones.length < 3)
-    this.telephones.push(telephone); // 0 => phone // 1 => ph
+    if (this.telephones.length < 3) this.telephones.push(telephone); // 0 => phone // 1 => ph
 
-  console.log(this.telephones);
+    console.log(this.telephones);
   }
 
-  getPhoneNumber(index: number){
-    return this.telephones.controls[index].get('phoneNumber')
+  getPhoneNumber(index: number) {
+    console.log('salut');
+    return this.telephones.controls[index].get('phoneNumber');
   }
 
   getNumberTelephone(index: number) {
-      return this.telephones.controls[index].get('telephone');
+    return this.telephones.controls[index].get('telephone');
   }
-  onSubmit(){
+  onSubmit() {
     this.submitted = true;
 
-    if(this.emailForm.errors){
+    if (this.emailForm.errors) {
       return;
     }
 
     console.log(this.emailForm);
   }
 
-  setSamePassword(event: Event){
+  setSamePassword(event: Event) {
     this.emailForm.controls['samePassword'].setValue(event);
   }
 
-  setPassword(event: Event){
+  setPassword(event: Event) {
     this.emailForm.controls['password'].setValue(event);
   }
 
-  setEmail(event: Event){
+  setEmail(event: Event) {
     this.emailForm.controls['email'].setValue(event);
   }
 
-  setTelephone(event: Event,index : number){
-    this.telephones.controls[index].setValue({phoneNumber:event});
+  setTelephone(event: Event, index: number) {
+    this.telephones.controls[index].setValue({ phoneNumber: event });
   }
 
-  remove(index: number){
+  remove(index: number) {
     this.telephones.removeAt(index);
   }
 
-  eventEmitter(event:Event){
-
-  }
+  eventEmitter(event: Event) {}
 }

@@ -1,3 +1,13 @@
-<app-message>
-</app-message>
-<p>discution works!</p>
+<div class="page-discution">
+  <div>
+    <app-message></app-message>
+  </div>
+  <div class="discution">
+    <div *ngIf="user$ | async as user"><!-- utilisation de la pipe async afin de suscrire à l'observable et retourner la dernier valeur émise
+                                            à la destruction du composant la pipe ce désabonne automatiquement pour éviter les fuites mémoires -->
+      <div *ngFor="let item of user">
+          <span>{{ item.name }}</span>
+      </div>
+    </div>
+  </div>
+</div>

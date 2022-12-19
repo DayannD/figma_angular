@@ -1,7 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MessageComponent } from './components/message/message.component';
+import { NgModule } from '@angular/core';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { DiscutionComponent } from './components/discution/discution.component';
+import { MessageComponent } from './components/message/message.component';
 import { MessengerRoutingModule } from './messenger-routing.module';
 
 
@@ -14,10 +15,11 @@ import { MessengerRoutingModule } from './messenger-routing.module';
   imports: [
     CommonModule,
     MessengerRoutingModule,
+    SharedModule
   ],
   exports: [
     DiscutionComponent,
     MessageComponent,
-  ]
+  ],
 })
 export class MessengerModule { }

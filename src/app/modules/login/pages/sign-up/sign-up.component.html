@@ -65,7 +65,7 @@
                     >
                 </app-input-with-out-ng-form>
                 <span (click)="remove(i)" *ngIf="!first">Remove</span>
-                <div *ngIf="submitted && getPhoneNumber(i)?.errors" class="invalid-feedback">
+                <div *ngIf="submitted && getNumberTelephone(i)?.errors" class="invalid-feedback">
                     <span class="wrong">telephone is required</span>
                 </div>
               </div>

@@ -1,9 +1,11 @@
 <section class="section">
-  <title>Messenger</title>
+  <h2>Message</h2>
 
   <div class="form">
     <form class="input">
-      <input type="text" id="search" name="search" placeholder="Search anything..." required>
+      <app-input cssLabel="label" css="acceuil" type="text"
+      label="search..." [model]="message">
+      </app-input>
     </form>
   </div>
 </section>

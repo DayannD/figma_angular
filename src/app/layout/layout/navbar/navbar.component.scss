@@ -42,9 +42,30 @@
   .menu{
     display: flex;
     flex: 9;
+    align-items: center;
+    justify-items:center;
+    justify-content:center;
     .selection{
-      flex-flow: column wrap;
-      
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      .item-selection{
+        display: flex;
+      }
+      .item{
+        margin:1em;
+        cursor: pointer;
+        padding: 5px 5px 10px 10px;
+      }
+      .focus{
+        background-image: url('/assets/img/rectangle-item.png');
+        width: 25px;
+        height: 25px;
+        background-position: center;
+        margin: 0;
+        border-radius: 30%;
+      }
     }
   }
   .logo {
@@ -55,7 +76,6 @@
     .logo-img{
       width: 64px;
     }
-
   }
 
   // .menu{
