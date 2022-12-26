@@ -6,7 +6,7 @@
       <div class="form">
         <div class="logo-desktop">
           <div class="logo-top"><img src="/assets/img/solo-logo-octom.png" alt="logo-login" /></div>
-          <div class="nom-entreprise">UI UNICORE</div>
+          <div class="nom-entreprise">OCTOM</div>
         </div>
         <!-- /********************** block droit **********************/ -->
         <div>
@@ -17,7 +17,7 @@
           <div class="input">
             <div>
               <app-input cssLabel="label" required minlength="4" css="champ" type="text" name="Login"
-                label="Email or phone number" [model]="auth.email">
+                label="Email or phone number"  [(ngModel)]="auth.email" [model]="auth.email">
               </app-input>
                 <div *ngIf="submitted && email?.errors"  class="invalid-feedback">
                   <span *ngIf="email?.errors!['required']" class="wrong">email is required</span>
@@ -26,7 +26,7 @@
             </div>
             <div>
               <app-input cssLabel="label" css="champ" type="password" name="Password" label="Enter password"
-                [model]="auth.password">
+                [model]="auth.password" [(ngModel)]="auth.password">
               </app-input>
               <div *ngIf="submitted && password?.errors"  class="invalid-feedback">
                 <span *ngIf="password?.errors!['required']" class="wrong">password is required</span>
@@ -59,7 +59,7 @@
 
       <div class="logo">
         <div class="logo-mobile"><img src="/assets/img/solo-logo-octom.png" alt="logo-login" /></div>
-        <div class="nom-entreprise">UI UNICORE</div>
+        <div class="nom-entreprise">OCTOM</div>
       </div>
       <div class="signature">
         <div class="signature-gauche">

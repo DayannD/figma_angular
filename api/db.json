@@ -5,6 +5,7 @@
       "image": "http://dummyimage.com/124x100.png/5fa2dd/ffffff",
       "name": "Ibis, glossy",
       "email": "jlowder0@blogs.com",
+      "password": "1234567",
       "messageRecu" :[
         {
           "message":[
@@ -52,6 +53,7 @@
       "image": "http://dummyimage.com/122x100.png/ff4444/ffffff",
       "name": "Glider, squirrel",
       "email": "tseggie1@dropbox.com",
+      "password": "1234567",
       "messageRecu" :[
         {
           "message":[
@@ -99,6 +101,7 @@
       "image": "http://dummyimage.com/143x100.png/cc0000/ffffff",
       "name": "Red-knobbed coot",
       "email": "kgoundsy2@vkontakte.ru",
+      "password": "1234567",
       "messageRecu" :[
         {
           "message":[
@@ -146,6 +149,7 @@
       "image": "http://dummyimage.com/189x100.png/cc0000/ffffff",
       "name": "Dama wallaby",
       "email": "dnoblett3@indiatimes.com",
+      "password": "1234567",
       "messageRecu" :[
         {
           "message":[
@@ -192,12 +196,14 @@
       "id": 5,
       "image": "http://dummyimage.com/163x100.png/5fa2dd/ffffff",
       "name": "Lemur, ring-tailed",
-      "email": "gtumpane4@about.me"
+      "email": "gtumpane4@about.me",
+      "password": "1234567"
     }, {
       "id": 6,
       "image": "http://dummyimage.com/107x100.png/ff4444/ffffff",
       "name": "Blue and gold macaw",
-      "email": "kcoil5@trellian.com"
+      "email": "kcoil5@trellian.com",
+      "password": "1234567"
     }, {
       "id": 7,
       "image": "http://dummyimage.com/242x100.png/ff4444/ffffff",

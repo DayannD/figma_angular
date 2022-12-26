@@ -26,4 +26,12 @@ export class UserService {
     return this.httpClient.get<User[]>(`${this.urlApi}/user`);
   }
 
+  public getOne(email:string): Observable<User> {
+    return this.httpClient.get<User>(`${this.urlApi}/user?email=${email}`);
+  }
+
+  public getOneById(id: number): Observable<User> {
+    return this.httpClient.get<User>(`${this.urlApi}/user?id=${id}`);
+  }
+
 }
