@@ -11,11 +11,11 @@ import { UserService } from 'src/app/service/userServices/user-service.service';
 
 
 export class DiscutionComponent implements OnInit {
-  user$!: Observable<User[]>;
+  user$!: Observable<User>;
   user!: number;
 
   constructor(private userServ: UserService) {
-    this.user$ = this.userServ.getAll();
+    this.user$ = this.userServ.getOneById(1);
    }
 
   ngOnInit(): void {

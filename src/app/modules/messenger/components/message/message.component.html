@@ -13,12 +13,18 @@
     <div *ngIf="user$ | async as user"><!-- utilisation de la pipe async afin de suscrire à l'observable et retourner la dernier valeur émise
                                             à la destruction du composant la pipe ce désabonne automatiquement pour éviter les fuites mémoires -->
 
-        {{ user | json }}
       <div *ngFor="let item of user.messageRecu">
-        {{ item | json }}
-          <span>{{ item }}</span>
+          {{ item.id | json}}
+          <div *ngIf="item.read == true">
+            <span>{{ item.message }}</span>
+          </div>
+          <div *ngIf="item.read == false">
+            <span>{{ item.message }}</span>
+          </div>
+        </div>
+
+        </div>
       </div>
-    </div>
-  </div>
+
 </section>
 

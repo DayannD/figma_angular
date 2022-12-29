@@ -17,11 +17,8 @@ export class MessageComponent implements OnInit {
 
   ngOnInit(): void {
     this.user$ = this.userService.getOneById(1);
-    this.user$.subscribe((user) =>
-    {
-      console.log(user);
-    }
-    );
+    this.user$.subscribe((data =>
+      console.log(data.email)));
   }
 
 }

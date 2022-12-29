@@ -16,22 +16,22 @@
         <form class="form form-control" #f="ngForm" (ngSubmit)="onSubmit(f)">
           <div class="input">
             <div>
-              <app-input cssLabel="label" required minlength="4" css="champ" type="text" name="Login"
-                label="Email or phone number"  [(ngModel)]="auth.email" [model]="auth.email">
+              <app-input cssLabel="label" required minlength="4" css="champ" type="text" name="email"
+                label="Email or phone number"  [(ngModel)]="auth.email" [model]="auth.email" ngDefaultControl>
               </app-input>
-                <div *ngIf="submitted && email?.errors"  class="invalid-feedback">
+                <!-- <div *ngIf="submitted && email?.errors"  class="invalid-feedback">
                   <span *ngIf="email?.errors!['required']" class="wrong">email is required</span>
                   <span *ngIf="email?.touched && email?.value ==''" class="wrong">email is required</span>
-                </div>
+                </div> -->
             </div>
             <div>
-              <app-input cssLabel="label" css="champ" type="password" name="Password" label="Enter password"
-                [model]="auth.password" [(ngModel)]="auth.password">
+              <app-input cssLabel="label" css="champ" type="password" name="password" label="Enter password"
+                [model]="auth.password" [(ngModel)]="auth.password" ngDefaultControl>
               </app-input>
-              <div *ngIf="submitted && password?.errors"  class="invalid-feedback">
+              <!-- <div *ngIf="submitted && password?.errors"  class="invalid-feedback">
                 <span *ngIf="password?.errors!['required']" class="wrong">password is required</span>
                 <span *ngIf="password?.touched && password?.value ==''" class="wrong">password is required</span>
-              </div>
+              </div> -->
             </div>
           </div>
           <div class="connexion">

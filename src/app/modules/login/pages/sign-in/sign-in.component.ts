@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { Auth } from 'src/app/core/models/auth/auth';
 import { User } from 'src/app/core/models/user/user';
 import { AuthService } from 'src/app/service/authService/auth-service.service';
+import { TokenService } from 'src/app/service/tokenService/token-service.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -18,9 +19,14 @@ export class SignInComponent implements OnInit {
   emailForm!: FormGroup;
   isLog!: Promise<boolean>;
   myusername: string = '';
+  user!: User;
   emailRegex = '^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$';
 
-  constructor(private authService: AuthService,private route: Router) {
+  constructor(
+    private authService: AuthService,
+    private route: Router,
+    private tokenService: TokenService
+  ) {
     this.emailForm = new FormGroup({
       email: new FormControl('', {
         validators: [Validators.required, Validators.email],
@@ -48,14 +54,19 @@ export class SignInComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     this.submitted = true;
-    if(f.valid){
-      this.user$ = this.authService.auth(f.value.Login,f.value.Passworde);
-    }else{
+    if (true) {
+      this.authService.auth(f.value.email, f.value.password);
+
+      this.user = this.authService.userUse;
+      console.log(this.user);
+      if (this.user != null) {
+        this.tokenService.saveToken('token');
+        this.route.navigate(['/dashboard']);
+      }
+    } else {
       return;
     }
-
-      this.route.navigate(['/']);
-    }
+  }
 
   // emailListener(email:any){
   //   this.email=email;
