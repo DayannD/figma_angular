@@ -5,16 +5,14 @@ import { AuthService } from 'src/app/service/authService/auth-service.service';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.css']
+  styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent implements OnInit {
+  constructor(private router: Router, private authService: AuthService) {}
 
-  constructor(private router:Router,private authService:AuthService) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
-  logout(){
+  logout() {
     this.authService.logout();
     this.router.navigate(['/']);
   }

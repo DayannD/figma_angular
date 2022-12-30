@@ -54,25 +54,12 @@ export class SignInComponent implements OnInit {
 
   onSubmit(f: NgForm) {
     this.submitted = true;
-    if (true) {
-      this.authService.auth(f.value.email, f.value.password);
+    if (!f.valid) return;
 
-      this.user = this.authService.userUse;
-      console.log(this.user);
-      if (this.user != null) {
-        this.tokenService.saveToken('token');
-        this.route.navigate(['/dashboard']);
-      }
-    } else {
-      return;
-    }
+    this.authService.auth(f.value.email, f.value.password);
+
+    if (!this.authService.getIsConnected) return;
+
+    this.route.navigate(['/dashboard']);
   }
-
-  // emailListener(email:any){
-  //   this.email=email;
-  // }
-
-  // passwordListener(password:any){
-  //   this.password=password;
-  // }
 }

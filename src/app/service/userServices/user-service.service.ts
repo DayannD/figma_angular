@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
   private urlApi: string;
+  private user$!: Observable<User>;
 
   public collections$: BehaviorSubject<User[]>;
   public status!: string;
@@ -25,7 +26,13 @@ export class UserService {
   }
 
   public getOne(email: string): Observable<User> {
-    console.log(`${this.urlApi}/user?email=${email}`);
+    this.user$ = this.httpClient.get<User>(
+      `${this.urlApi}/user?email=${email}`
+    );
+    this.user$.subscribe((user) => {
+      console.log(user);
+    });
+
     return this.httpClient.get<User>(`${this.urlApi}/user?email=${email}`);
   }
 
