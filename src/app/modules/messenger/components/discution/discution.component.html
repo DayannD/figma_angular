@@ -3,9 +3,10 @@
     <app-message></app-message>
   </div>
   <div class="discution">
-    <div *ngIf="user$ | async as user"><!-- utilisation de la pipe async afin de suscrire à l'observable et retourner la dernier valeur émise
+    <div *ngIf="user$ | async as user">
+      <!-- utilisation de la pipe async afin de suscrire à l'observable et retourner la dernier valeur émise
 à la destruction du composant la pipe ce désabonne automatiquement pour éviter les fuites mémoires -->
-<!-- <div *ngFor="let item of user.messageRecu">
+      <!-- <div *ngFor="let item of user.messageRecu">
       <div *ngFor="let item of item.message"></div>
         <div *ngIf="item.read == true">
           <span>{{ item.message }}</span>

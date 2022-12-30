@@ -3,28 +3,32 @@
 
   <div class="form">
     <form class="input">
-      <app-input cssLabel="label" css="acceuil" type="text"
-      label="search..." [model]="message" name="message">
+      <app-input cssLabel="label" css="acceuil" type="text" label="search..." [model]="message" name="message">
       </app-input>
     </form>
   </div>
 
   <div class="discution">
-    <div *ngIf="user$ | async as user"><!-- utilisation de la pipe async afin de suscrire à l'observable et retourner la dernier valeur émise
+    <div *ngIf="user$ | async as user">
+      <!-- utilisation de la pipe async afin de suscrire à l'observable et retourner la dernier valeur émise
                                             à la destruction du composant la pipe ce désabonne automatiquement pour éviter les fuites mémoires -->
 
       <div *ngFor="let item of user.messageRecu">
-          {{ item.id | json}}
+        <div>
           <div *ngIf="item.read == true">
             <span>{{ item.message }}</span>
           </div>
+        </div>
+      </div>
+      <h2>All message</h2>
+      <div *ngFor="let item of user.messageRecu">
+        <div>
           <div *ngIf="item.read == false">
             <span>{{ item.message }}</span>
           </div>
         </div>
-
-        </div>
       </div>
+    </div>
+  </div>
 
 </section>
-
