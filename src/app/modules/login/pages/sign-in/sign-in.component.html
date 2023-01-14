@@ -17,9 +17,9 @@
           <div class="input">
             <div>
               <app-input cssLabel="label" required minlength="4" css="champ" type="text" name="email"
-                label="Email or phone number"  [(ngModel)]="auth.email" [model]="auth.email" ngDefaultControl>
+                label="Email or phone number" [(ngModel)]="auth.email" [model]="auth.email" ngDefaultControl>
               </app-input>
-                <!-- <div *ngIf="submitted && email?.errors"  class="invalid-feedback">
+              <!-- <div *ngIf="submitted && email?.errors"  class="invalid-feedback">
                   <span *ngIf="email?.errors!['required']" class="wrong">email is required</span>
                   <span *ngIf="email?.touched && email?.value ==''" class="wrong">email is required</span>
                 </div> -->
@@ -28,6 +28,7 @@
               <app-input cssLabel="label" css="champ" type="password" name="password" label="Enter password"
                 [model]="auth.password" [(ngModel)]="auth.password" ngDefaultControl>
               </app-input>
+              <div *ngIf="errorMessage" class="wrong">{{errorMessage}}</div>
               <!-- <div *ngIf="submitted && password?.errors"  class="invalid-feedback">
                 <span *ngIf="password?.errors!['required']" class="wrong">password is required</span>
                 <span *ngIf="password?.touched && password?.value ==''" class="wrong">password is required</span>

@@ -1,48 +1,53 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
+import { catchError, map, Observable } from 'rxjs';
 import { User } from 'src/app/core/models/user/user';
 import { environment } from 'src/environments/environment';
-import { TokenService } from '../tokenService/token-service.service';
-import { UserService } from '../userServices/user-service.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  user$!: Observable<User>;
-  user!: User;
-  isConnected: boolean = false;
   urlApi: string;
 
   constructor(
-    private userService: UserService,
-    private token: TokenService,
-    private httpClient: HttpClient
+    private readonly router: Router,
+    private readonly httpClient: HttpClient
   ) {
     this.urlApi = environment.urlApi;
-    this.isConnected = !!this.token.isLogged();
   }
 
-  public auth(email: string, password: string) {
-    this.httpClient
-      .get<User>(`${this.urlApi}/user?email=${email}&password=${password}`)
-      .subscribe((Response) => {
-        this.token.saveToken('token');
-        this.isConnected = true;
-      });
+  public auth(email: string, password: string): Observable<void | unknown> {
+    return this.httpClient
+      .post<User>(`${this.urlApi}/user`, { email, password })
+      .pipe(
+        map((result: User) => {
+          this.saveToken('token');
+          this.router.navigate(['/dashboard']);
+          return;
+        }),
+        catchError((error: any) => {
+          return error;
+        })
+      );
   }
 
-  getIsConnected(): boolean {
-    return this.isConnected;
+  public saveToken(token: string): void {
+    sessionStorage.setItem('token', token);
+  }
+
+  public isLogged(): boolean {
+    const token = sessionStorage.getItem('token');
+    return !!token;
   }
 
   logout() {
-    this.isConnected = false;
-    this.token.clearToken();
+    this.removeToken();
+    this.router.navigate(['/']);
   }
 
-  public connect(): boolean {
-    return true;
+  public removeToken(): void {
+    sessionStorage.removeItem('token');
   }
 }
