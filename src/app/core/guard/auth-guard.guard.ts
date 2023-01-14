@@ -28,22 +28,4 @@ export class AuthGuardGuard implements CanLoad {
     this.router.navigateByUrl('/sign-in');
     return false;
   }
-
-  // canActivate(
-  //   route: ActivatedRouteSnapshot,
-  //   state: RouterStateSnapshot
-  // ):
-  //   | Observable<boolean | UrlTree>
-  //   | Promise<boolean | UrlTree>
-  //   | boolean
-  //   | UrlTree {
-  //   const auth = this.authService.connect();
-  //   console.log('je suis la');
-  //   if (auth) {
-  //     return true;
-  //   } else {
-  //     this.router.navigateByUrl('sign-in');
-  //     return false;
-  //   }
-  // }
 }

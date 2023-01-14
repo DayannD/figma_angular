@@ -4,8 +4,8 @@
       "id": 1,
       "image": "http://dummyimage.com/124x100.png/5fa2dd/ffffff",
       "name": "Ibis, glossy",
-      "email": "jlowder0@blogs.com",
-      "password": "1234567",
+      "email": "test",
+      "password": "test",
       "messageRecu": [
         {
           "id": 1,

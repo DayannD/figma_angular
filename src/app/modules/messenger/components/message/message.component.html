@@ -16,7 +16,8 @@
       <div *ngFor="let item of user.messageRecu">
         <div>
           <div *ngIf="item.read == true">
-            <span>{{ item.message }}</span>
+            {{ item.id | json}}
+            <button (click)="idFrom.emit(item.id)">{{ item.message }}</button>
           </div>
         </div>
       </div>
@@ -25,6 +26,7 @@
         <div>
           <div *ngIf="item.read == false">
             <span>{{ item.message }}</span>
+
           </div>
         </div>
       </div>
